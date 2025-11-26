@@ -1,5 +1,7 @@
 # 02_server-side
 
+Docu about deploy a serve-side tracking over cloudflare (for free) following soon.
+
 This module documents a server side tracking architecture based on a Tag Manager Server Container.  
 It is designed to compare signal quality, resilience, and control versus the client side baseline in 01.
 
