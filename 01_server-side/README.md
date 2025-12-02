@@ -63,28 +63,10 @@ Cross-disciplinary across:
                  │ Google Analytics 4           │
                  └─────────────────────────────┘
 
----
-
-# 3. Cloudflare Worker (Anonymized)
-
-```js
-export default {
-  async fetch(request) {
-    const url = new URL(request.url);
-    url.hostname = "server-tagging.example.run.app";
-    return fetch(url.toString(), request);
-  },
-};
-
-This Worker acts as an edge reverse proxy, ensuring:
-- requests stay first-party (ss.example.com)
-- browser privacy protections are bypassed
-- GA4 hits are not blockey by ad-blockers
-- the sGTM server receives all measurement traffic
 
 ---
 
-# 4. Screenshots
+# 3. Screenshots
 
 Cloudflare Worker - Performance 
 
@@ -96,7 +78,7 @@ GA4 - Traffic Snapshot
 
 ---
 
-# 5. Tools, Platforms & Components Used
+# 4. Tools, Platforms & Components Used
 
 Tracking & Tag Management
 - GTM Web Container (anonymized: GTM-XXXXXXX)
@@ -121,7 +103,7 @@ Debugging & Diagnostics
 
 ---
 
-# 6. Main Challenges (for me)
+# 5. Main Challenges (for me)
 
 ## Challenge 1 - Server Container initially unreachable (404 Not Found)
 
@@ -161,6 +143,7 @@ Created a generic GA4 event tag in sGTM:
 - reads `{{Event_Name}}`
 - forwards all custom events go GA4
 - excludes `page_view` (already handled by base tag)
+
 
 
 
